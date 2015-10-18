@@ -10,9 +10,16 @@ module.exports = function(server) {
   },
   handlers.getGroups);
 
+  server.get({
+    path: '/groups/:id',
+    version: '1.0.0'
+  },
+  handlers.getGroupById);
+
   server.post({
     path: '/groups',
     version: '1.0.0'
   },
+  restify.bodyParser(),
   handlers.postGroups);
 };

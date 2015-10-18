@@ -3,7 +3,14 @@
 let restify = require('restify')
   , passport = require('passport')
   , fs = require('fs')
-  , mongoose = require('mongoose');
+  , mongoose = require('mongoose')
+  , bluebird = require('bluebird');
+
+mongoose.Promise = bluebird;
+
+require('./users/model');
+require('./groups/model');
+require('./events/model');
 
 createServer();
 
@@ -20,7 +27,7 @@ function createServer() {
   // include passport strategies
   require('./auth/strategies');
 
-  let dirs = ['./auth', './users', './events'];
+  let dirs = ['./auth', './users', './events', './groups'];
   dirs.forEach(dir => require(dir + '/routes')(server));
 
   mongoose.connect('mongodb://localhost/eventalyst');

@@ -14,5 +14,13 @@ module.exports = function(server) {
     path: '/events',
     version: '1.0.0'
   },
+  restify.bodyParser(),
   handlers.postEvents);
+
+  server.patch({
+    path: '/events/:id',
+    version: '1.0.0'
+  },
+  restify.bodyParser(),
+  handlers.updateEvent);
 };

@@ -6,13 +6,31 @@ let Schema = mongoose.Schema
   , ObjectId = Schema.ObjectId;
 
 let Group = new Schema({
-    author        : ObjectId
-  , name          : String
-  , description   : String
-  , content       : String
-  , logoUrl       : String
-  , createdAt     : Date
-  , updatedAt     : Date
+    author: ObjectId
+  , name : {
+      type: String,
+      default: "Default name"
+    }
+  , description : {
+      type: String,
+      default: "Default description"
+    }
+  , content: {
+      type: String,
+      default: "Default content"
+    }
+  , logoUrl: {
+      type: String,
+      default: null
+    }
+  , createdAt: {
+      type: String,
+      default: null
+    }
+  , updatedAt: {
+      type: Date,
+      default: Date.now
+    }
 });
 
 mongoose.model('Group', Group);
