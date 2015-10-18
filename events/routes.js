@@ -1,6 +1,7 @@
 'use strict';
 
 let restify = require('restify')
+  , passport = require('passport')
   , handlers = require('./handlers');
 
 module.exports = function(server) {
@@ -8,6 +9,7 @@ module.exports = function(server) {
     path: '/events',
     version: '1.0.0'
   },
+  // passport.authenticate('bearer', { session: false }),
   handlers.getEvents);
 
   server.get({

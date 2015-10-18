@@ -57,7 +57,9 @@ exports.postEvents = Promise.coroutine(function *(req, res) {
 });
 
 exports.updateEvent = (req, res) => {
-  Event.update(req.query.id, req.body, {}, (err, event) => {
+  Event.update({
+    _id: req.params.id
+  }, req.body, {}, (err, event) => {
     if (err) {
       console.log(err);
       res.send(400, err);

@@ -52,7 +52,7 @@ exports.postUsers = (req, res) => {
 
 exports.patchUsers = (req, res) => {
   User.update({
-    id: req.query.id
+    _id: req.params.id
   }, req.body, { multi: true }, (err, user) => {
     if (err) {
       res.send(400, err);
