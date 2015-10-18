@@ -13,9 +13,7 @@ exports.getGroups = (req, res) => {
 };
 
 exports.getGroupById = (req, res) => {
-  Group.findOne({
-    id: req.query.id
-  }, groups => {
+  Group.findById(req.params.id, groups => {
     return res.send(groups);
   });
 };

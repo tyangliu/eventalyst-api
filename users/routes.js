@@ -27,11 +27,6 @@ module.exports = function(server) {
     path: '/users/:id',
     version: '1.0.0'
   },
+  restify.bodyParser(),
   handlers.patchUsers);
-
-  server.get({
-    path: '/users/:id/events',
-    version: '1.0.0'
-  },
-  handlers.getEvents);
 };

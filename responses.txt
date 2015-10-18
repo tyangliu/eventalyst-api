@@ -13,54 +13,6 @@
 }
 
 ---------------------------------------------
-/users/:id/events
-
-{
-  "user": {
-    "id": "fdsuSDF82",
-    "name": "Tom Liu",
-    "email": "tyangliu@gmail.com",
-    "description": "test",
-    "avatar_url": "http://eventalyst.com/uploads/image.png",
-    "type": "sponsor",
-    "created_at": "2015-05-09T0:500-700",
-    "updated_at": "2015-05-09T0:500-700"
-  },
-  "events": [
-    {
-      "id": "f87412Ddf",
-      "name": "Hackathon",
-      "description": "test",
-      "city": "Vancouver",
-      "content": "test",
-      "starts_at": "2015-05-09T0:500-700",
-      "ends_at": "2015-05-09T0:500-700",
-      "votes": 5329,
-      "tags": ["technology", "web development"],
-      "target_sponsors": [],
-      "sponsors": [],
-      "image_url": "http://eventalyst.com/uploads/image.png",
-      "owner_group": {
-        "id": "f87412Ddf",
-        "name": "Nike",
-        "description": "test",
-        "city": "Vancouver",
-        "content": "test",
-        "tags": ["technology", "web development"],
-        "logo_url": "http://eventalyst.com/uploads/image.png",
-        "image_url": "http://eventalyst.com/uploads/image.png",
-        "created_at": "2015-05-09T0:500-700",
-        "updated_at": "2015-05-09T0:500-700"
-      },
-      "created_at": "2015-05-09T0:500-700",
-      "updated_at": "2015-05-09T0:500-700",
-
-      "association": "owns"
-    }
-  ]
-}
-
----------------------------------------------
 /users/:id/groups
 
 {

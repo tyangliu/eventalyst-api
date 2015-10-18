@@ -10,6 +10,12 @@ module.exports = function(server) {
   },
   handlers.getEvents);
 
+  server.get({
+    path: '/events/:id',
+    version: '1.0.0'
+  },
+  handlers.getEventById);
+
   server.post({
     path: '/events',
     version: '1.0.0'

@@ -12,7 +12,8 @@ let User = new Schema({
     }
   , email: {
       type: String,
-      default: "Default email"
+      default: "Default email",
+      required: true
     }
   , description: {
       type: String,

@@ -4,6 +4,7 @@ let bcrypt = require('bcryptjs')
   , mongoose = require('mongoose');
 
 let User = mongoose.model('User');
+let Event = mongoose.model('Event');
 
 exports.getUsers = (req, res) => {
   var user = User.find({}, (err, user) => {
@@ -17,9 +18,7 @@ exports.getUsers = (req, res) => {
 };
 
 exports.getUserById = (req, res) => {
-  var user = User.findOne({
-    id: req.query.id
-  }, (err, user) => {
+  var user = User.findById(req.params.id, (err, user) => {
     if (err) {
       console.log(err);
       res.send(400, err);
@@ -53,16 +52,12 @@ exports.postUsers = (req, res) => {
 
 exports.patchUsers = (req, res) => {
   User.update({
-    _id: req.query.id
+    id: req.query.id
   }, req.body, { multi: true }, (err, user) => {
     if (err) {
       res.send(400, err);
     } else {
       res.send(user);
     }
-  })
-};
-
-exports.getEvents = (req, res) => {
-
+  });
 };

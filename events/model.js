@@ -6,8 +6,7 @@ let Schema = mongoose.Schema
   , ObjectId = Schema.ObjectId;
 
 let Event = new Schema({
-    author: ObjectId
-  , name: {
+    name: {
       type: String,
       default: "Default name"
     }

@@ -19,6 +19,10 @@ let Group = new Schema({
       type: String,
       default: "Default content"
     }
+  , creator: {
+      type: ObjectId,
+      default: null
+    }
   , logoUrl: {
       type: String,
       default: null

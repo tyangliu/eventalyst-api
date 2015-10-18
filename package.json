@@ -12,7 +12,8 @@
     "mongoose": "^4.1.11",
     "passport": "^0.3.0",
     "restify": "^4.0.3",
-    "restify-joi-middleware": "0.0.8"
+    "restify-joi-middleware": "0.0.8",
+    "passport-http-bearer": "*"
   },
   "main": "index.js",
   "scripts": {
