@@ -36,7 +36,7 @@ exports.getEventById = Promise.coroutine(function *(req, res) {
     if (foundEvent) {
       let creator = yield User.findById(foundEvent.creator).lean();
       foundEvent.creator = creator;
-      let sponsors = yield User.find(foundEvent.sponsors).lean();
+      let sponsors = yield Group.find(foundEvent.sponsors).lean();
       foundEvent.sponsors = sponsors;
       res.send(foundEvent);
     } else {
