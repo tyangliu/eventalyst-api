@@ -7,7 +7,7 @@ let bcrypt = require('bcryptjs')
 let Group = mongoose.model('Group');
 
 exports.getGroups = (req, res) => {
-  Group.find({}, groups => {
+  Group.find({}, (err, groups) => {
     res.send(groups);
   });
 };
